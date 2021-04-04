@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			// $("#show").click(function(){
+			// 	alert("Nút hiện thông báo vừa được click vào!!!")
+			// });
+			// $(".info").click(function(){
+			// 	alert("Một phần tử của lớp info vừa được click vào!!!")
+			// });
+			// $("button").click(function(){
+			// 	alert("Nút nào đó vừa được click vào!!!")
+			// });
+			// $("#close").click(function(){
+			// 	$('#message').hide(1000, function(){
+			// 		alert('Đã ẩn thông báo!')
+			// 	});
+			// });
+
+			// $("#show").click(function(){
+			// 	$('#message').show();
+			// });
+
+			// $("#test").click(function(){
+			// 	$('#message').toggle();
+			// });
+
+			// $('#message').click(function(){
+			// 	$(this).addClass('myClass');
+			// });
+
+			// $('#test').click(function(){
+			// 	$('#message').toggleClass('myClass')
+			// })
+				//hover
+			// $('#test').hover(function(){
+			// 	$('#message').toggleClass('myClass');
+			// },function(){
+			// 	$('#message').toggleClass('myClass');
+			// });
+
+			// $('#test').click(function(){
+			// 	$('#message').css({'color' : 'red', 'background-color' : 'yellow'});
+			// });\
+
+			// $('#test').click(function(){
+			// 	alert($('#message').html("Hello <br> wold!"));
+			// })
+
+			// $('#test').click(function(){
+			// 	$('#message').append("<img src='https://s1.vnecdn.net/vnexpress/restruct/i/v380/v2_2019/pc/graphics/logo.svg'>");
+			// })
+
+			$('#test').click(function(){
+				// $.ajax({url:"test.php?name=Thanh&age=21", success:function(result){
+				// 	$('#message').append(result);
+
+				// }});
+
+				$.get("test.php", {name: "Nguyen Van An", age: 25}, function(data, status){
+
+					if(status=='success')
+						alert(data);
+					else
+						alert('Da xay ra loi')
+				});
+			});
+		
+		});
+	</script>
+
+	<style type="text/css">
+		#message{
+			border: 1px black solid;
+		}
+		.myClass{
+			background-color: black;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div id="message">
+		<p class="info">
+			Đây là chương trình đầu tiên
+		</p>
+		<p class="info">Được viết tại Trí Anh JSCo.</p>
+		<button id="close">Đóng</button>
+	</div>
+	<button id="show">Hiện thông báo</button>
+	<button id="test">Kiểm tra</button>
+</body>
+</html>
